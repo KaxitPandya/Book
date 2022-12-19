@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+
+    <form action="/products/<%=editproduct._id%>?_method=PUT" method="POST">
+        
+        <label for="name">
+            <input type="text" name="name" id="name" value="<%=editproduct.name%>" placeholder="Enter Product Name">
+        </label>
+
+        <label for="price">
+            <input type="number" name="price" id="price" value="<%=editproduct.price%>" placeholder="Enter The Price">
+        </label>
+
+        <label for="author">
+            <input type="text" name="author"  required id="author" value="<%=editproduct.author%>" placeholder="Enter The author Name">
+        </label>
+
+        <label for="origin">
+            <input type="text" name="origin"  required id="origin" value="<%=editproduct.origin%>" placeholder="Enter The Origin">
+        </label>
+
+        <label for="pages">
+            <input type="number" name="pages" required id="pages" value="<%=editproduct.pages%>" placeholder="Enter The Total Pages">
+        </label>
+        <br>
+
+        <label for="year">
+            <input type="number" name="year" required id="year" value="<%=editproduct.year%>" placeholder="Enter The year">
+        </label>
+
+        <label for="available">
+            <input type="number" name="available" required id="available" value="<%=editproduct.available%>" placeholder="Enter Available Notebooks">
+        </label>
+        <br>
+        
+        <label for="yes">Digital Copy Available ?
+            Yes <input type="radio" name="yes" id="yes"> 
+            No <input type="radio" name="yes" id="no"> 
+        </label>
+
+
+        <label for="category">Select Category
+            <select name="category" id="">
+                <% for( let category of categories){  %> 
+                    <option value="<%=category%>"<%= editproduct.category === category  ? "selected" : "" %> > <%=category%> </option>
+                <% } %> 
+            </select>
+        </label>
+
+        <button>Submit</button>
+
+    </form>
+    <a href="/products/<%=editproduct._id%>">Cancel</a>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+</head>
+<body>
+    <h1>Enter A New Book</h1>
+
+    <form action="/products" method="POST">
+        
+        <label for="name">
+            <input type="text" name="name" required id="name" placeholder="Enter Product Name">
+        </label>
+
+        <label for="price">
+            <input type="number" name="price" required id="price" placeholder="Enter The Price">
+        </label>
+        <br>
+        <label for="author">
+            <input type="text" name="author"  required id="author" placeholder="Enter The author Name">
+        </label>
+
+        <label for="origin">
+            <input type="text" name="origin"  required id="origin" placeholder="Enter The Origin">
+        </label>
+
+        <label for="pages">
+            <input type="number" name="pages" required id="pages" placeholder="Enter The Total Pages">
+        </label>
+        <br>
+
+        <label for="year">
+            <input type="number" name="year" required id="year" placeholder="Enter The year">
+        </label>
+
+        <label for="available">
+            <input type="number" name="available" required id="available" placeholder="Enter Available Notebooks">
+        </label>
+        <br>
+        
+        <label for="yes">Digital Copy Available ?
+            Yes <input type="radio" name="yes" id="yes"> 
+            No <input type="radio" name="yes" id="no"> 
+        </label>
+        <br>
+        
+        <label for="category">Select Category
+            <select name="category" id="">
+                <% for( let category of categories){  %> 
+                    <option value="<%=category%>"><%=category%></option>
+                    <% } %> 
+                </select>
+            </label>
+            
+            <button>Submit</button>
+
+    </form>
+
+</body>
+</html>
+<!-- <label for="digital">Digital Copy Available ? 
+    <input type="checkbox" checked="" name="digital" required id="digital" placeholder="Enter The digital">
+</label> -->

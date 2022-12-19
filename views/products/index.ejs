@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>All Books</title>
+</head>
+
+<body>
+
+    <h1 > <%= category %> Books</h1>
+
+    <ul >
+        
+        <% for (let product of Allproduct){ %>
+            <li class="w-60">
+                <a href="/products/<%= product._id %>">
+                    <%= product.name %>,  <%=product.author %> 
+                </a>
+            </li>
+            
+            <% } %>
+    </ul>
+
+    <a class="text-xl hover:text-2xl transition-all" href="/products/new/add">Create a New Book</a>
+    <% if(category!=="All"){ %> 
+        <a class="text-xl hover:text-2xl transition-all" href="/products">All Books</a> 
+    <% } %> 
+    
+</body>
+
+</html>
